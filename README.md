@@ -24,7 +24,6 @@ It depends on  [fluent-plugin-dynamodb-alt](https://github.com/winebarrel/fluent
 
 ```ruby
 redy = Redy.new(
-  delete_key: 'delete',
   redis: {namespace: 'redy', host: 'example.com', port: 7777, expire_after: 86400, negative_cache_ttl: 300},
   fluent: {tag: 'dynamodb.test', host: 'localhost', port: 24224, redis_error_tag: 'redis.error'},
   dynamodb: {table_name: 'my_table', timestamp_key: 'timestamp', access_key_id: '...', secret_access_key: '...', region: 'us-east-1', delete_key: 'delete'})
@@ -47,7 +46,7 @@ See [fluent-plugin-dynamodb-alt](https://github.com/winebarrel/fluent-plugin-dyn
   aws_key_id AKIAIOSFODNN7EXAMPLE
   aws_sec_key wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
   region ap-northeast-1
-  table_name guest_user_datas
+  table_name my_table
   timestamp_key timestamp
   binary_keys data
   delete_key delete
