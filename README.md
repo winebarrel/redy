@@ -28,7 +28,7 @@ redy = Redy.new(
   fluent: {tag: 'dynamodb.test', host: 'localhost', port: 24224, redis_error_tag: 'redis.error'},
   dynamodb: {table_name: 'my_table', timestamp_key: 'timestamp', access_key_id: '...', secret_access_key: '...', region: 'us-east-1', delete_key: 'delete'})
 
-redy.set('foo', {'bar' => 100, 'zoo' => 'baz'})
+redy.set('foo', {'bar' => 100, 'zoo' => 'baz'}, :async => true)
 p redy.get('foo') #=> {'bar' => 100, 'zoo' => 'baz'}
 redy.delete('foo')
 
